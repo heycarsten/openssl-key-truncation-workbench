@@ -7,8 +7,7 @@ so that it works again? Is it even possible? YES! (see: Answer)
 ## Using
 
 1. You'll need to install [RVM](https://rvm.io)
-2. `bundle`
-3. `script/run-tests`
+2. `script/run-tests`
 
 ## Answer
 
