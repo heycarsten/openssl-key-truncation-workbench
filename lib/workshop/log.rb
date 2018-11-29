@@ -1,5 +1,5 @@
 module Workshop
-  class Reporter
+  class Log
     RED   = 31
     GREEN = 32
     PINK  = 35

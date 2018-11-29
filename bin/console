@@ -1,2 +1,2 @@
 #!/bin/sh
-bundle exec pry -Ilib -r workshop
+bundle exec pry -I lib -r workshop -r ap
