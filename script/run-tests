@@ -32,7 +32,7 @@ switch_ruby 2.5
 bin/announce
 bin/dec $proper_key $encrypted_msg $big_key
 
-# User Ruby 2.6 to decrypt message
+# Use Ruby 2.6 to decrypt message
 switch_ruby 2.6
 bin/announce
 bin/dec $proper_key $encrypted_msg $big_key
