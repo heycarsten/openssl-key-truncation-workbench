@@ -9,6 +9,8 @@ so that it works again? Is it even possible? YES! (see: Answer)
 1. You'll need to install [RVM](https://rvm.io)
 2. `script/run-tests`
 
+![](https://snappities.s3.amazonaws.com/wy5151v522c591r2f41b.png)
+
 ## Answer
 
 Turns out the truncated key was only half the story.
