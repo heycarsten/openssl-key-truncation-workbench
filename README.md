@@ -33,5 +33,5 @@ proper_key = long_key[0, 32]
 ActiveSupport::MessageEncryptor.new(proper_key, long_key, crypto: 'aes-256-cbc')
 ```
 
-I hope this helps someone out there who's pulling their hair out because can't
-decrypt stuff once upgrading to Ruby 2.4+.
+I hope this helps someone out there who's pulling their hair out because they
+can't decrypt stuff once upgrading to Ruby 2.4+.
