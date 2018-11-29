@@ -15,7 +15,7 @@ so that it works again? Is it even possible? YES! (see: Answer)
 Turns out the truncated key was only half the story.
 `ActiveSupport::MessageEncryptor` takes a second argument, this is the signing
 key, by default the secret key is used as the signing key. When the secret key
-is truncated to 32 btyes (required length for AES-256-CBC) then this value is
+is truncated to 32 bytes (required length for AES-256-CBC) then this value is
 _also_ used as the signing key and decryption can not happen successfully.
 
 The solution is to truncate the secret key to 32 bytes, AND explicitly pass
