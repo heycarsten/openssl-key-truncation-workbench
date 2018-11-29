@@ -1,0 +1,38 @@
+#!/usr/bin/env zsh
+set -e
+source "$HOME/.rvm/scripts/rvm"
+
+switch_ruby() {
+  rvm use $1 --quiet --install
+  bundle --quiet
+}
+
+# Use Ruby 2.2 to encrypt message with big ol' key that's way too big
+switch_ruby 2.2
+bin/announce
+big_key="$(bin/keygen)"
+proper_key=$(echo $big_key | cut -c1-32) # Create 32 byte version of big key
+encrypted_msg="$(bin/enc $big_key)"
+
+# Use Ruby 2.2 to decrypt message with big ol' key that's way too big
+bin/dec $big_key $encrypted_msg
+
+# Use Ruby 2.3 to decrypt message with big ol' key that's way too big
+switch_ruby 2.3
+bin/announce
+bin/dec $big_key $encrypted_msg
+
+# Use Ruby 2.4 to decrypt message
+switch_ruby 2.4
+bin/announce
+bin/dec $proper_key $encrypted_msg $big_key
+
+# Use Ruby 2.5 to decrypt message
+switch_ruby 2.5
+bin/announce
+bin/dec $proper_key $encrypted_msg $big_key
+
+# User Ruby 2.6 to decrypt message
+switch_ruby 2.6
+bin/announce
+bin/dec $proper_key $encrypted_msg $big_key
